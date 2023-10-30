@@ -3,3 +3,72 @@ Proyecto ejecutado desde apps script
 link 👇👇👇👇
 
 https://script.google.com/macros/s/AKfycbzY6woO6NjgfJN1_HZX3wRcIdXeSfpw3A4vYgsVpRkBtc5I0SK52LHQkabl3h9d0-Et5w/exec
+
+👉Acceder
+Este comando accede a tu cuenta y autoriza la administración de los proyectos de Apps Script de tu Cuenta de Google. Una vez que se ejecute, se te solicitará que accedas a una Cuenta de Google en la que se almacenen tus proyectos de Apps Script.
+clasp login
+
+
+👉Salir
+Con este comando, se sale de la herramienta de línea de comandos. Debes volver a acceder con clasp login 
+para volver a autenticarte con Google antes de seguir usando clasp.
+clasp logout
+
+👉Cree un nuevo proyecto de Apps Script
+Este comando crea una secuencia de comandos nueva en el directorio actual con un título de secuencia de comandos opcional.
+clasp create [scriptTitle]
+Este comando también crea dos archivos en el directorio actual:
+Un archivo .clasp.json que almacene el ID de la secuencia de comandos
+Un archivo de manifiesto del proyecto appsscript.json que contiene metadatos del proyecto.
+
+👉Clone un proyecto existente
+Este comando clona un proyecto existente en el directorio actual. Debes crear o compartir
+ la secuencia de comandos con tu Cuenta de Google. Para especificar el proyecto de la secuencia de comandos 
+ que se clonará, proporciona su ID de secuencia de comandos.
+Para encontrar el ID de la secuencia de comandos del proyecto, sigue estos pasos:
+Abre el proyecto de Apps Script.
+A la izquierda, haz clic en Configuración del proyecto settings.
+En IDs, copia el ID de la secuencia de comandos.
+👇
+ clasp clone <scriptId>
+Descarga un proyecto de secuencia de comandos
+Este comando descarga el proyecto Apps Script de Google Drive al sistema de archivos de tu computadora.
+
+
+👉✔clasp pull
+Sube un proyecto de secuencia de comandos
+Este comando sube todos los archivos de un proyecto de secuencia de comandos de tu computadora a Google Drive.
+
+
+👉✔clasp push
+Mostrar lista de versiones del proyecto
+Este comando enumera la cantidad y la descripción de cada una de las versiones de un proyecto de secuencia de comandos.
+
+
+👉clasp versions
+Implementa un proyecto publicado
+Puedes implementar proyectos de secuencias de comandos como apps web, complementos o ejecutables. Puedes crear implementaciones en el editor de secuencias de comandos, en el manifiesto del proyecto o mediante clasp.
+
+Para implementar un proyecto con clasp, primero crea una versión inmutable del proyecto de Apps Script. Una versión es una "instantánea" de un proyecto de secuencia de comandos y es similar a una versión ramificada de solo lectura.
+
+
+clasp version [description]
+Este comando muestra el número de versión recién creado. Con ese número, puedes implementar y anular la implementación de instancias de tu proyecto:
+
+
+clasp deploy [version] [description]
+clasp undeploy <deploymentId>
+Este comando actualiza una implementación existente con una versión y una descripción nuevas:
+
+
+clasp redeploy <deploymentId> <version> <description>
+Mostrar lista de implementaciones
+Este comando enumera los IDs de implementación, las versiones y sus descripciones del proyecto de la secuencia de comandos.
+
+
+clasp deployments
+Abre el proyecto en el editor de Apps Script
+Este comando abre un proyecto de secuencia de comandos en el editor de Apps Script. El editor se inicia como una pestaña nueva en el navegador web predeterminado.
+
+
+clasp open
